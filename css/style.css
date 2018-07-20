@@ -439,6 +439,16 @@ i.butter.gray {
   cursor: pointer !important;
   z-index: 100 !important;
 }
+.owl-prev{
+  position: absolute;
+  left: 0;
+  top: 30%;
+}
+.owl-next{
+  position: absolute;
+  right: 0;
+  top: 30%;
+}
 /**----------------------------*/
 /**---------Section About Us-----*/
 /**----------------------------*/

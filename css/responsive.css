@@ -60,6 +60,12 @@
   .number p {
     left: 30%;
   }
+  .owl-prev{
+    top: 22%;
+  }
+  .owl-next{
+    top: 22%;
+  }
 }
 @media (max-width: 992px) {
   .menu-float .menu-top-line .menu-open{

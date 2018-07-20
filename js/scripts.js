@@ -5,6 +5,16 @@ $('.carousel').carousel({
     interval: 4000
 });
 
+
+//window.onload = function() {
+    // let h = document.getElementsByClassName('carousel-inner')[0].clientHeight;
+    // console.log(h);
+    // let a = document.getElementById('trap');
+    // a.style.height = h + 'px';
+    // console.log(a.style.height);
+
+//};
+
 /**
  * Reviews
  * */
@@ -69,28 +79,19 @@ $(function () {
 });
 
 /**
- * header white div height
- * */
-$(function () {
-    var h = $('.carousel').height();
-    $('.white-trapezium-inner img:first').height(h);
-});
-
-/**
- * Gallery view
- * */
-$(function () {
-    galleryView();
-});
-
-/**
  * Gallery view function
  * */
 function galleryView() {
-    var divWidth = $(window).width();
+    var divWidth = window.innerWidth;
+    console.log(divWidth);
+
     if (divWidth > 640) {
+        console.log('zzz');
         try {
-            $('.gallery-wrapper').owlCarousel('destroy');
+            if ($('.gallery-wrapper').hasClass('owl-carousel')) {
+                $('.gallery-wrapper').removeClass('owl-carousel owl-theme');
+                $('.gallery-wrapper').owlCarousel('destroy');
+            }
         } catch (err) {
             // to do nothing
         }
@@ -101,7 +102,13 @@ function galleryView() {
         });
     } else {
         try {
-            $('.gallery-wrapper').masonry('destroy');
+            var $masonryTarget = $('.gallery-wrapper'),
+                $hasMasonry = $masonryTarget.data('masonry') ? true : false
+            ;
+            if ($masonryTarget.length > 0 && $hasMasonry) {
+                // Destroy masonry if exists.
+                $masonryTarget.masonry('destroy');
+            }
         } catch (err) {
             // to do nothing
         }
@@ -138,7 +145,7 @@ function galleryView() {
  * init single item image view
  * */
 $(function () {
-    var windowWidth = $(window).width();
+    var windowWidth = window.innerWidth;
     if (windowWidth > 640) {
         imageViewDesktop();
     } else {
@@ -151,7 +158,7 @@ $(function () {
  * */
 $(function () {
     $('.goods-slider').owlCarousel({
-        nav: false,
+        nav: true,
         loop: false,
         navText: [
             '<i class="fa fa-4x fa-angle-left" aria-hidden="true"></i>',
@@ -272,18 +279,32 @@ function imageColorViewDesktop() {
 
 imageColorViewDesktop();
 
+window.onload = function(){
+    /**
+     * header white div height
+     * */
+    var h = $('.carousel').css("height");
+    console.log(h);
+    $('#trap').height(h);
+
+    /**
+     * Gallery view
+     * */
+    galleryView();
+};
+
 /**
- * window resize
+ * Window resize
  * */
 $(window).resize(function () {
-    var h = $('.carousel').height();
+    var h = $('.carousel').css("height");
     $('.white-trapezium-inner img:first').height(h);
 
     /**gallery*/
     galleryView();
 
     /**Single-card page */
-    var windowWidth = $(window).width();
+    var windowWidth = window.innerWidth;
     if (windowWidth > 640) {
         imageViewDesktop();
         try {
@@ -295,6 +316,7 @@ $(window).resize(function () {
         imageViewMobile()
     }
 });
+
 
 /**
  *Float Menu Init.
