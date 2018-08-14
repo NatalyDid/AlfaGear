@@ -86,6 +86,28 @@ body {
   border: 1px solid #c80306;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.25);
 }
+.btn-blue {
+  color: #fff;
+  background: #0A457F;
+  border: 1px solid #0A457F;
+  padding: 10px 36px 10px 36px;
+  font-family: "RobotoCondensed-Bold", sans-serif;
+  font-size: 18px;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.btn-blue:visited, .btn-blue:focus, .btn-blue:active {
+  color: #fff;
+  border: 1px solid #0385ac;
+  background-color: #0385ac;
+  outline: none;
+}
+.btn-blue:hover {
+  color: #fff !important;
+  background-color: #0385ac;
+  border: 1px solid #0385ac;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.25);
+}
 .btn-orange {
   color: #fff;
   background-color: #f60;
@@ -282,7 +304,6 @@ i.butter.gray {
 .menu-top-line {
   overflow: hidden;
   background: #fff;
-  border-bottom: 1px solid #52667c;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -735,10 +756,9 @@ p.advantages-text {
 /**header*/
 
 .contact-menu-single-product {
-  border-bottom: 2px solid #d4d4d4;
   overflow: hidden;
   text-transform: uppercase;
-  padding: 5px 40px;
+  padding: 15px 10px;
 }
 .contact-menu-single-product .logo-menu {
   display: inline-block;
@@ -761,6 +781,29 @@ p.advantages-text {
   margin-right: 40px;
   font-family: "RobotoCondensed-Bold", sans-serif;
   cursor: pointer;
+}
+.main-menu-wrapper{
+  display: inline-block;
+  margin-left: 100px;
+}
+.main-menu{
+  list-style: none;
+  line-height: 50px;
+  margin: 0 15px;
+}
+.main-menu li{
+  display: inline-block;
+  margin-right: 40px;
+}
+.main-menu li a {
+  display: block;
+  color: #014683;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+.main-menu li:last-child{
+  margin-right: 0;
 }
 .section-card {
   padding-top: 50px;
@@ -855,7 +898,6 @@ p.advantages-text {
 .item-big-img-wrapper {
   width: 83%;
   float: right;
-  border: 1px solid #e5e2e2;
 }
 .item-big-img-wrapper img {
   max-height: 548px;
