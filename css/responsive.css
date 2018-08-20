@@ -35,11 +35,14 @@
   .item-small-img-wrapper {
     padding-left: 10px;
   }
+  .menu-float .menu-top-line{
+    padding: 20px;
+  }
   .menu-float .menu-top-line ul li {
     font-size: 14px;
     margin-right: 10px;
   }
-  .headhesive .btn-red {
+  .headhesive .btn-blue {
     padding: 8px 16px;
     font-size: 14px;
   }
